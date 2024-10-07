@@ -1,0 +1,420 @@
+.red {
+    background: red;
+}
+
+.w(@width) {
+    width: @width;
+}
+
+.h(@height) {
+    height: @height;
+}
+
+.grad(@percentage) {
+    background: linear-gradient(0deg, rgba(24, 26, 31, 1) 0%, rgba(151, 152, 156, 1) @percentage);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    padding: 0 !important;
+}
+
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+@keyframes liAnim {
+
+    0% {
+        background: #97989c;
+    }
+
+    10% {
+        .grad(10%);
+    }
+
+    20% {
+        .grad(20%)
+    }
+
+    30% {
+        .grad(30%)
+    }
+
+    40% {
+        .grad(40%)
+    }
+
+    50% {
+        .grad(50%)
+    }
+
+    60% {
+        .grad(55%)
+    }
+
+    70% {
+        .grad(60%)
+    }
+
+    80% {
+        .grad(65%)
+    }
+
+    100% {
+        .grad(70%)
+    }
+}
+
+@keyframes ulAnim {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    10% {
+        transform: rotate(198deg);
+    }
+
+    40% {
+        transform: rotate(252deg);
+    }
+
+    80% {
+        transform: rotate(324deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+#nav1 {
+    .w(auto);
+    white-space: nowrap;
+    margin: 0;
+
+    ul {
+        left: -100vw;
+        position: absolute;
+        min-width: 6rem;
+        top: 100%;
+        outline: 1px solid black;
+    }
+
+    >li {
+        min-width: 6rem;
+        width: auto;
+        border-radius: 5px;
+    }
+
+    li {
+        min-height: 2rem;
+        padding: 0.2rem;
+        text-indent: 3px;
+        position: relative;
+        background: lightgray;
+        user-select: none;
+    }
+
+    li:hover {
+        animation: liAnim 0.5s ease;
+    }
+
+    .show {
+        z-index: 100;
+        left: 0 !important;
+        animation: ulAnim 0.1s linear;
+    }
+}
+
+#nav2 {
+    .w(auto);
+    white-space: nowrap;
+    margin: 0;
+
+    ul {
+        left: -100vw;
+        background: lightgray;
+        top: -1px;
+        position: absolute;
+        opacity: 0;
+        transition-property: opacity, border;
+        transition-duration: 0.2s, 0.5s;
+        transition-timing-function: linear, linear;
+        border: 1px solid black;
+    }
+
+    >li {
+        min-width: 6rem;
+        border-radius: 5px;
+    }
+
+    li {
+        min-height: 2rem;
+        padding: 0.2rem;
+        text-indent: 3px;
+        z-index: 99;
+        position: relative;
+        background: lightgray;
+        user-select: none;
+    }
+
+    li:hover {
+        font-weight: bold;
+    }
+
+    li:hover>ul {
+        left: 100%;
+        opacity: 1;
+        font-weight: initial;
+    }
+}
+
+@keyframes bannerAnim {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#banner {
+    .red;
+    animation: bannerAnim 4s ease-in-out infinite;
+    border-radius: 10px;
+
+    >p {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@keyframes rainAnim {
+    from {
+        background-position: 0 0;
+    }
+
+    to {}
+}
+
+@keyframes rain1Anim {
+    from {
+        top: -100vh;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@keyframes rain2Anim {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 100vh;
+    }
+}
+
+#rainAnim {
+    opacity: 0.5;
+    z-index: -1;
+    position: fixed;
+    pointer-events: none;
+}
+
+.rain-1 {
+    z-index: inherit;
+    position: absolute;
+    object-fit: cover;
+    .w(100vw);
+    height: 100vh;
+    top: -100vh;
+    animation: 15s rain1Anim linear infinite;
+}
+
+.rain-2 {
+    z-index: inherit;
+    position: absolute;
+    object-fit: cover;
+    .w(100vw);
+    height: 100vh;
+    top: 0;
+    animation: 15s rain2Anim linear infinite;
+}
+
+#nav {
+    background: gray;
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+    font-size: 2rem;
+
+    >* {
+        margin: 0;
+        .h(auto);
+    }
+}
+
+#navbar {
+    .h(auto);
+    font-size: initial;
+}
+
+#sidebar {
+    z-index: 100;
+    background-color: transparent;
+    .h(auto);
+    font-size: 1.5rem;
+    white-space: nowrap;
+
+    ul {
+        background-color: transparent;
+        border: 0;
+        list-style-type: none;
+        margin-top: 0;
+    }
+
+    ul li {
+        border: 1px solid blue;
+        .w(200px);
+        margin-bottom: 0.5rem;
+        padding: 0.5rem !important;
+        font-weight: 500;
+    }
+
+    ul li a:hover {
+        font-weight: bold;
+    }
+
+    i {
+        padding: 0.2rem;
+        margin-right: 0.5rem;
+    }
+
+    ul li:nth-child(odd) {
+        color: white !important;
+        background-color: blue;
+    }
+
+    ul li:nth-child(even) {
+        color: blue !important;
+        background-color: white;
+    }
+}
+
+#site-face-container {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid black;
+
+    >* {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+.publication-element {
+    color: magenta;
+}
+
+.publication-text {
+    text-indent: 2rem;
+}
+
+.publication-show-more {
+    margin-right: 4rem;
+    font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+}
+
+.menu-button {
+    border: none;
+    position: relative;
+    .w(32px);
+    .h(32px);
+    background-color: lightgray;
+}
+
+#sidebar-container {
+    .dropdown-toggle::after {
+        content: none;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+html {
+    font-size: 12px;
+}
+
+.carousel img {
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.carousel h3 {
+    width: auto;
+    background: black;
+}
+
+@media (max-width: 1200px) {
+    #banner {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+}
