@@ -15,16 +15,16 @@
     <script defer src="https://cdn.jsdelivr.net/npm/less"></script>
 </head>
 
-<body>
+<body class="bg-light">
     <div id="rainAnim">
         <img class="rain-1" src="rain.png" />
         <img class="rain-2" src="rain.png" />
     </div>
-    <div class="d-flex align-items-center sticky-top w-100" id="nav">
+    <div class="bg-success d-flex align-items-center sticky-top w-100" id="nav">
         <div class="col-auto" id="sidebar-container"></div>
-        <div class="col-auto">
+        <div class="col-auto h-100">
             <ul id="nav1">
-                <li onclick="toggleDropdown(event)">First DD
+                <li class="d-flex align-items-center" onclick="toggleDropdown(event)">First DD
                     <ul>
                         <li onclick="toggleDropdown(event)">1.1
                             <ul>
@@ -45,9 +45,9 @@
                 </li>
             </ul>
         </div>
-        <div class="col-auto">
+        <div class="col-auto h-100">
             <ul id="nav2">
-                <li>Second DD
+                <li class="d-flex align-items-center">Second DD
                     <ul>
                         <li>Zoom
                             <ul>
@@ -83,7 +83,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-12 col-xl" id="banner">
+        <div class="col-12 col-xl h-100 bg-danger" id="banner">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat tenetur, fugiat modi earum
                 recusandae
                 quos
@@ -134,7 +134,7 @@
                     </a>
                 </div>
             </div>
-            <div id="carousel1" class="carousel slide col-9 mx-auto p-3" data-bs-ride="false">
+            <div id="carousel1" class="carousel slide col-9 mx-auto p-3" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></li>
                     <li data-bs-target="#carousel1" data-bs-slide-to="1"></li>
